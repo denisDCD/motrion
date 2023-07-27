@@ -1,0 +1,114 @@
+/* Config Padrão */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ajustar todas dimensões do que for determinado */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;    
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #ebedef;
+}
+
+.navbar img {
+    width: 150px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li+li {
+    margin-left: 5px;
+}
+
+.navbar li a {
+    list-style: none;
+    display: block;
+    padding: 10px 20px;
+}
+
+.navbar li a:hover {
+    color: #ebedef;
+    background-color: #9e9e9e;
+    border-radius: 5px;
+}
+
+/* Utilizando display: flex; */
+.sub-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1024px;
+    height: 1024px;
+    padding: 20px;
+}
+
+/* <div> principal "CONTAINER"*/
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/* Section */
+.section {
+    display: grid;
+    grid-template-columns: 512px 512px;
+}
+
+.img-area,
+.text-area {
+    width: 512px;
+    align-items: center;
+    display: grid;
+}
+
+.img-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.img-area img {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+    transition: all .25s ease;
+}
+
+.img-area span {
+    opacity: 0;
+    position: absolute;
+    transition: all .25s ease;
+    z-index: 1;
+}
+
+.img-area span:hover {
+    transform: scale(1.01);
+}
+
+.img-area img:hover {
+    filter: blur(5px) grayscale(100%);
+}
+
+.img-area:hover > span {
+    opacity: 1;
+    transition: all .25s ease;
+}
